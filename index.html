@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Tran</title>
+    <link rel="icon" href="chen.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="yin-yang-background"></div>
+
+    <!-- Update Header Navigation -->
+    <header class="fade-in" id="main-header">
+        <nav>
+            <a href="#about">~$ cd ~/about</a>
+            <a href="#experience">~$ cd ~/projects</a>
+            <a href="#contact">~$ cd ~/contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="landing">
+            <h1 class="your-name fade-in">Michael Tran</h1>
+            <div class="yin-yang-placeholder"></div>
+            <p class="description fade-in">Computer Science Student at Texas A&M University</p>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2 class="section-header">[michael@arch-linux ~/about]$ cat about_me.txt</h2>
+            <div class="section-content">
+                <div id="name-container">
+                    <span class="name-format">// Format: First Name, Last Name</span>
+                    <h3 id="hover-name" class="english-name" data-names='["Michael Tran", "陳麦克", "Trần Michael", "陳麥克"]'>Michael Tran</h3>
+                    
+                    <div class="name-format-details" style="display: none;">
+                        <div class="format-vietnamese">
+                            <span class="name-format">// Tiếng Việt: Họ, Tên</span>
+                            <span class="vietnamese-name">Trần Michael</span>
+                        </div>
+                        
+                        <div class="format-chinese">
+                            <span class="name-format">// 中文: 姓名</span>
+                            <span class="chinese-name">陳麦克</span>
+                        </div>
+
+                        <div class="format-cantonese">
+                            <span class="name-format">// 廣東話: 姓名</span>
+                            <span class="cantonese-name">陳麥克</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="animate-text">
+                    Hi! I am Michael Tran. I am a second year Chinese-Vietnamese American student
+                    studying CS and Statistics at Texas A&M University.
+                </h3>
+
+                <h3 class="animate-text">
+                    Outside of programming, I love exploring different cultures through cooking and learning languages.
+                    
+                    I am currently training to join the Texas A&M Powerlifting Team next year.
+                </h3>
+                <h3 class="animate-text">
+                    Thanks for visiting my page!
+                </h3>
+            </div>
+        </section>
+
+        <section id="experience" class="content-section">
+            <h2 class="section-header">[michael@arch-linux ~/projects]$ ./show_experience.sh</h2>
+            <div class="section-content">
+                <p class="animate-text">--- Showcased Projects ---</p>
+                
+                <article class="project animate-text">
+                    <div class="project-header">
+                        <h3>howdyseek - Texas A&M Course Availability Tracker</h3>
+                        <div class="tech-icons">
+                            <i class="fab fa-react" title="React"></i>
+                            <i class="fab fa-python" title="Python"></i>
+                            <i class="fab fa-node-js" title="Node.js"></i>
+                            <i class="fa-solid fa-feather" title="SQLite"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="howdyseek.png" alt="Project Screenshot">
+                        </div>
+                        
+                        <pre><code>Description: Developed a course availability tracker using Selenium for Texas A&M's Schedule Builder platform.
+- Implemented a system to web scrape and send real-time notifications via Discord webhooks.
+Link: <a href="https://github.com/michtra/howdyseek">github.com/michtra/howdyseek</a></code></pre>
+                    </div>
+                </article>
+
+                <article class="project animate-text">
+                    <div class="project-header">
+                        <h3>C2LL - Language Learner</h3>
+                        <div class="tech-icons">
+                            <i class="fab fa-python" title="Python"></i>
+                            <i class="fa-solid fa-terminal" title="Shell"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="c2ll.png" alt="Project Screenshot">
+                        </div>
+                        
+                        <pre><code>Description: Created a language learning program for various Asian languages.
+- Utilizies pre-existing cache files or regenerates as needed.
+Link: <a href="https://github.com/michtra/C2LL">github.com/michtra/C2LL</a></code></pre>
+                    </div>
+                </article>
+
+                <article class="project animate-text">
+                    <div class="project-header">
+                        <h3>md-blogger - Converts markdown to a reference manual</h3>
+                        <div class="tech-icons">
+                            <i class="fab fa-linux" title="Linux"></i>
+                            <i class="fab fa-python" title="Python"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="tux.png" alt="Project Screenshot">
+                        </div>
+                        
+                        <pre><code>Description: Created a system to convert markdown files into a full-fledged reference manual.
+- Currently hosting a Linux reference manual on my website <a href="https://ttrraann.com/stuff/linux">here</a>.
+Link: <a href="https://github.com/michtra/md-blogger">github.com/michtra/md-blogger</a></code></pre>
+                    </div>
+                </article>
+                
+                <article class="project animate-text">
+                    <div class="project-header">
+                        <h4>Sharetea POS System</h4>
+                        <div class="tech-icons">
+                            <i class="fab fa-react" title="React"></i>
+                            <i class="fab fa-node-js" title="Node.js"></i>
+                            <i class="fa-solid fa-database" title="PostgreSQL"></i>
+                        </div>
+                    </div>
+                    
+                    <pre><code>Description: Managing a team to create a POS system for CSCE 331.
+Link: <a href="https://github.com/michtra/project3-team21-team-method">github.com/michtra/project3-team21-team-method</a></code></pre>
+                </article>
+                
+                <p class="animate-text">--- Work Experience ---</p>
+
+
+                <article class="project animate-text">
+                    <div class="project-header">
+                        <h4>United States Department of Defense - Software Engineering Intern</h4>
+                        <div class="tech-icons">
+                            <i class="fa-brands fa-microsoft" title="Microsoft"></i>
+                        </div>
+                    </div>
+                    
+                    <pre><code>Duration: June 2024 - August 2024
+Description: Developed an auto-updating application for the Department of Defense.
+Status: NDA (top secret! 🤫)</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2 class="section-header">[michael@arch-linux ~/contact]$ ls -la</h2>
+            <div class="section-content">
+                <p class="animate-text">total 16K</p>
+                <p class="animate-text">drwxr-xr-x 1 michael michael  80 <span class="dynamic-date"></span> .</p>
+                <p class="animate-text">drwxr-xr-x 1 michael wheel   712 <span class="dynamic-date"></span> ..</p>
+                <p class="animate-text">-rw-r--r-- 1 michael michael  29 <span class="dynamic-date"></span> email.txt</p>
+                <p class="animate-text">-rw-r--r-- 1 michael michael  27 <span class="dynamic-date"></span> github.txt</p>
+                <p class="animate-text">-rw-r--r-- 1 michael michael  34 <span class="dynamic-date"></span> linkedin.txt</p>
+                <p class="animate-text">-rw-r--r-- 1 michael michael  80 <span class="dynamic-date"></span> README.md</p>
+                
+                <p class="animate-text terminal-command">[michael@arch-linux ~/contact]$ cat README.md</p>
+                <div class="file-content">
+                    <p class="animate-text">Feel free to reach out! You can find my contact information in the other files.</p>
+                </div>
+                
+                <p class="animate-text terminal-command">[michael@arch-linux ~/contact]$ cat email.txt</p>
+                <div class="file-content">
+                    <p class="animate-text">Email: <a href="mailto:michael.tran@tamu.edu">michael.tran@tamu.edu</a></p>
+                </div>
+                
+                <p class="animate-text terminal-command">[michael@arch-linux ~/contact]$ cat github.txt</p>
+                <div class="file-content">
+                    <p class="animate-text">GitHub: <a href="https://github.com/michtra" target="_blank">github.com/michtra</a></p>
+                </div>
+                
+                <p class="animate-text terminal-command">[michael@arch-linux ~/contact]$ cat linkedin.txt</p>
+                <div class="file-content">
+                    <p class="animate-text">LinkedIn: <a href="https://linkedin.com/in/michtra" target="_blank">linkedin.com/in/michtra</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <a href="#landing">~$ cd ~</a>
+                <a href="#about">~$ cd ~/about</a>
+                <a href="#experience">~$ cd ~/projects</a>
+                <a href="#contact">~$ cd ~/contact</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="mailto:michael.tran@tamu.edu" title="Email"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://github.com/michtra" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://linkedin.com/in/michtra" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p class="animate-text">[michael@arch-linux ~]$ echo "© $(date +%Y) Michael Tran"</p>
+                <p class="animate-text"><em id="dynamic-year">© 2025 Michael Tran</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
