@@ -1,10 +1,28 @@
-// updates time elements to show current time without seconds for cleaner UI
-function updateDynamicYear() {
-    const now = new Date();
-    const dynamicYearElement = document.getElementById('dynamic-year');
-    if (dynamicYearElement) {
-        const year = now.getFullYear();
-        dynamicYearElement.textContent = `© ${year} Michael Tran`;
+function changeNameFormat(nameElement, nameContainer, nameFormatDetails, currentNameIndex) {
+    const names = JSON.parse(nameElement.getAttribute('data-names'));
+    if (!names || names.length <= 1) return;
+    
+    nameElement.textContent = names[currentNameIndex];
+    
+    const formatSpan = nameContainer.querySelector('.name-format');
+    if (formatSpan) {
+        // update text based on the language
+        if (currentNameIndex === 0) { // English
+            formatSpan.textContent = "// Format: First Name, Last Name";
+            nameFormatDetails.style.display = "none";
+        }
+        else if (currentNameIndex === 1) { // Chinese (Mandarin)
+            formatSpan.textContent = "// 中文: 姓名";
+            nameFormatDetails.style.display = "none";
+        }
+        else if (currentNameIndex === 2) { // Vietnamese
+            formatSpan.textContent = "// Tiếng Việt: Họ, Tên";
+            nameFormatDetails.style.display = "none";
+        }
+        else if (currentNameIndex === 3) { // Cantonese
+            formatSpan.textContent = "// 廣東話: 姓名";
+            nameFormatDetails.style.display = "none";
+        }
     }
 }
 
@@ -27,30 +45,32 @@ function updateNameFormat() {
         }
 
         if (names.length > 1) {
+            // add hover functionality for desktop
             nameElement.addEventListener('mouseover', () => {
                 currentNameIndex = (currentNameIndex + 1) % names.length;
-                nameElement.textContent = names[currentNameIndex];
-
-                const formatSpan = nameContainer.querySelector('.name-format');
-
-                if (currentNameIndex === 0) { // English
-                    formatSpan.textContent = "// Format: First Name, Last Name";
-                    nameFormatDetails.style.display = "none";
-                }
-                else if (currentNameIndex === 1) { // Chinese (Mandarin)
-                    formatSpan.textContent = "// 中文: 姓名";
-                    nameFormatDetails.style.display = "none";
-                }
-                else if (currentNameIndex === 2) { // Vietnamese
-                    formatSpan.textContent = "// Tiếng Việt: Họ, Tên";
-                    nameFormatDetails.style.display = "none";
-                }
-                else if (currentNameIndex === 3) { // Cantonese
-                    formatSpan.textContent = "// 廣東話: 姓名";
-                    nameFormatDetails.style.display = "none";
-                }
+                changeNameFormat(nameElement, nameContainer, nameFormatDetails, currentNameIndex);
             });
+            
+            // add click functionality for mobile (and desktop)
+            nameElement.addEventListener('click', (e) => {
+                // prevent default to avoid any navigation issues
+                e.preventDefault();
+                currentNameIndex = (currentNameIndex + 1) % names.length;
+                changeNameFormat(nameElement, nameContainer, nameFormatDetails, currentNameIndex);
+            });
+            
+            // visual cue
+            nameElement.style.cursor = 'pointer';
         }
+    }
+}
+
+function updateDynamicYear() {
+    const now = new Date();
+    const dynamicYearElement = document.getElementById('dynamic-year');
+    if (dynamicYearElement) {
+        const year = now.getFullYear();
+        dynamicYearElement.textContent = `© ${year} Michael Tran`;
     }
 }
 
@@ -135,9 +155,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let lastScrollY = window.scrollY;
     let currentRotation = 0;
-    // lower values make rotation more subtle
-    let names = [];
-    let currentNameIndex = 0;
 
     function handleScroll() {
         const scrollY = window.scrollY;
@@ -166,24 +183,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', handleScroll, {passive: true}); // passive for smoother scrolling
-
-    // name translation on hover for multilingual experience
-    if (nameElement) {
-        try {
-            names = JSON.parse(nameElement.getAttribute('data-names'));
-        }
-        catch (e) {
-            console.error("Could not parse names data attribute:", e);
-            names = [nameElement.textContent]; // safety fallback
-        }
-
-        if (names.length > 1) {
-            nameElement.addEventListener('mouseover', () => {
-                currentNameIndex = (currentNameIndex + 1) % names.length;
-                nameElement.textContent = names[currentNameIndex];
-            });
-        }
-    }
 
     // using intersection observer for typing effect to improve performance
     const observer = new IntersectionObserver((entries) => {

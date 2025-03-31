@@ -149,7 +149,7 @@ a {
     position: relative;
     padding: 20px;
     color: #f8f8f2;
-    gap: 5vh;
+    gap: 3vh;
 }
 
 #landing .your-name {
@@ -224,11 +224,25 @@ a {
     line-height: 1.2;
 }
 
+.cowsay-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.cowsay-container {
+    display: inline-block;
+    text-align: left;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
 .cowsay-output {
+    display: block;
     font-family: monospace;
     white-space: pre;
-    text-align: center;
-    display: block;
+    margin: 0;
 }
 
 .cowsay-output a {
@@ -330,7 +344,6 @@ a {
     color: #e95420;
 }
 
-/* Name hover effect */
 #hover-name {
     cursor: pointer;
     display: inline-block;
@@ -342,11 +355,18 @@ a {
     position: relative;
     font-family: 'Fira Code', monospace;
     text-shadow: 0 0 5px rgba(23, 147, 209, 0.5);
+    user-select: none; /* Prevent text selection when clicking rapidly */
 }
 
-#hover-name:hover {
+#hover-name:hover, #hover-name:active {
     background-color: rgba(80, 250, 123, 0.1);
     transform: translateY(-2px);
+}
+
+/* tap effect for mobile */
+#hover-name:active {
+    transform: translateY(0px);
+    opacity: 0.9;
 }
 
 .name-format {
@@ -522,6 +542,10 @@ footer {
 
     .project-content pre {
         flex: 1;
+    }
+
+    .cowsay-output {
+        font-size: 0.9em;
     }
 }
 
