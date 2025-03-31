@@ -1,24 +1,6 @@
 // updates time elements to show current time without seconds for cleaner UI
-function updateDynamicDates() {
+function updateDynamicYear() {
     const now = new Date();
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const month = months[now.getMonth()];
-    const day = now.getDate();
-
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-
-    // zero-padding for consistent width
-    hours = hours < 10 ? '0' + hours : hours;
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-
-    const formattedDate = `${month} ${day} ${hours}:${minutes}`;
-
-    document.querySelectorAll('.dynamic-date').forEach(element => {
-        element.textContent = formattedDate;
-    });
-
-    // separate year update for copyright to avoid unnecessary DOM searches
     const dynamicYearElement = document.getElementById('dynamic-year');
     if (dynamicYearElement) {
         const year = now.getFullYear();
@@ -153,37 +135,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let lastScrollY = window.scrollY;
     let currentRotation = 0;
-     // lower values make rotation more subtle
+    // lower values make rotation more subtle
     let names = [];
     let currentNameIndex = 0;
 
     function handleScroll() {
         const scrollY = window.scrollY;
-
         const landingHeight = landingSection.offsetHeight;
-
-        // using document height to ensure rotation resets when scrolling back up
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollProgress = scrollY / docHeight;
-
-        // multiplying by 2 to complete two full rotations for more visual interest
-        currentRotation = scrollProgress * 360 * 2;
-
-        // blur and scale effects start after user begins scrolling
-        const startEffectScrollY = 0;
-        let blurAmount = 0;
-        let scaleAmount = 1;
-
-        if (scrollY > startEffectScrollY) {
-            const effectProgress = (scrollY - startEffectScrollY) / (document.body.scrollHeight - landingHeight - startEffectScrollY + 1);
-            blurAmount = Math.min(5, effectProgress * 20); // capping blur for performance
-            scaleAmount = 1 + Math.min(2.5, effectProgress * 4.0); // limiting scale to prevent extreme distortion
+    
+        // make yin yang completely disappear if past landing
+        const isPastLanding = scrollY >= landingHeight;
+        if (isPastLanding) {
+            yinYangBg.style.opacity = '0';
+            return;
         }
-
+        
+        // calculate rotation and fade based on scroll within landing section
+        const scrollProgress = scrollY / landingHeight;
+        currentRotation = scrollProgress * 360; // one full rotation within landing section
+        
+        // fade out
+        let opacityValue = Math.max(0, 1 - scrollProgress * 1.2); // fade slightly faster than scroll
+        let scaleAmount = 1 + Math.min(1.5, scrollProgress * 2.0); // moderate scaling
+    
         // applying transforms in one operation for better performance
         yinYangBg.style.transform = `scale(${scaleAmount}) rotate(${currentRotation}deg)`;
-        yinYangBg.style.filter = `blur(${blurAmount}px)`;
-
+        yinYangBg.style.opacity = opacityValue;
+    
         lastScrollY = scrollY;
     }
 
@@ -251,7 +229,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     updateNameFormat();
-    updateDynamicDates();
+    updateDynamicYear();
     handleScroll(); // initial call for proper positioning on page load
 
     setupProjectImages();
