@@ -28,7 +28,6 @@ a {
     transition: color 0.2s, transform 0.2s, background-color 0.2s;
 }
 
-/* Text gradient utility class */
 
 /* Animations */
 @keyframes fadeIn {
@@ -68,20 +67,6 @@ a {
 .fade-in {
     opacity: 0;
     animation: fadeIn 1.5s ease-in-out forwards;
-}
-
-.typing-text {
-    overflow: hidden;
-    border-right: 0.15em solid var(--accent-green);
-    white-space: normal;
-    width: 0;
-    animation: typing 1s steps(40, end) forwards,
-    blink-caret 0.75s step-end 3,
-    remove-caret 0s 2s forwards;
-}
-
-.animate-text {
-    min-height: 1.6em;
 }
 
 /* Background Yin Yang SVG */
@@ -185,9 +170,6 @@ a {
 .content-section {
     padding: 80px 10% 40px;
     margin: 40px auto;
-    max-width: 900px;
-    background-color: rgba(13, 13, 13, 1);
-    border: 1px solid #2c2c2c;
     border-radius: 8px;
 }
 
@@ -207,9 +189,8 @@ a {
     line-height: 1.7;
 }
 
-.section-content p.animate-text {
-    font-family: 'Fira Code', monospace;
-    white-space: pre;
+.section-content h2 {
+    text-align: center;
 }
 
 .section-content pre {
@@ -275,6 +256,7 @@ a {
 
 /* Projects styling */
 .project-header {
+    align-items: center;
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -286,13 +268,14 @@ a {
 }
 
 .project-content {
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
 .project-image {
-    max-width: 100%;
+    max-width: 50%;
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid var(--border-color);

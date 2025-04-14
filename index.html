@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Michael Tran" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ttrraann.com" />
+    <meta property="og:description" content="Michael Tran's Personal Website" />
     <title>Michael Tran</title>
     <link rel="icon" href="img/chen.png" type="image/icon type">
     <link rel="stylesheet" href="style.css">
@@ -13,7 +17,6 @@
 <body>
     <div id="yin-yang-background"></div>
 
-    <!-- Update Header Navigation -->
     <header class="fade-in" id="main-header">
         <nav>
             <a href="#about">~$ cd ~/about</a>
@@ -54,18 +57,13 @@
                     </div>
                 </div>
                 
-                <h3 class="animate-text">
+                <h3>
                     Hi! I am Michael Tran. I am a second year Chinese-Vietnamese American student
                     studying CS and Statistics at Texas A&M University.
                 </h3>
 
-                <h3 class="animate-text">
-                    Outside of programming, I love exploring different cultures through cooking and learning languages.
-                    
-                    I am currently training to join the Texas A&M Powerlifting Team next year.
-                </h3>
-                <h3 class="animate-text">
-                    Thanks for visiting my page!
+                <h3>
+                    Outside of programming, I enjoy powerlifting, and I also love exploring different cultures through cooking and learning languages.
                 </h3>
             </div>
         </section>
@@ -73,11 +71,12 @@
         <section id="experience" class="content-section">
             <h2 class="section-header">[michael@arch-linux ~/projects]$ ./show_experience.sh</h2>
             <div class="section-content">
-                <p class="animate-text">--- Showcased Projects ---</p>
+
+                <h2>~ Projects ~</h2>
                 
-                <article class="project animate-text">
+                <article class="project">
                     <div class="project-header">
-                        <h3>howdyseek - Texas A&M Course Availability Tracker</h3>
+                        <h3>howdyseek: Texas A&M Course Availability Tracker</h3>
                         <div class="tech-icons">
                             <i class="devicon-react-original colored" title="React"></i>
                             <i class="devicon-tailwindcss-original" title="Tailwind CSS"></i>
@@ -97,12 +96,13 @@ Link: <a href="https://github.com/michtra/howdyseek">github.com/michtra/howdysee
                     </div>
                 </article>
 
-                <article class="project animate-text">
+                <article class="project">
                     <div class="project-header">
-                        <h3>C2LL - Language Learner</h3>
+                        <h3>C2LL: Language Learner</h3>
                         <div class="tech-icons">
                             <i class="fab fa-python" title="Python"></i>
                             <i class="devicon-bash-plain" title="Shell"></i>
+                            <i class="devicon-streamlit-plain" title="Streamlit"></i>
                         </div>
                     </div>
                     
@@ -117,12 +117,14 @@ Link: <a href="https://github.com/michtra/C2LL">github.com/michtra/C2LL</a></cod
                     </div>
                 </article>
 
-                <article class="project animate-text">
+                <article class="project">
                     <div class="project-header">
-                        <h3>md2man - Converts markdown to a reference manual</h3>
+                        <h3>md2man: Markdown to reference manual converter</h3>
                         <div class="tech-icons">
                             <i class="devicon-linux-plain" title="Linux"></i>
                             <i class="devicon-cplusplus-plain" title="C++"></i>
+                            <i class="devicon-html5-plain-wordmark colored" title="HTML"></i>
+                            <i class="devicon-css3-plain-wordmark colored" title="CSS"></i>
                         </div>
                     </div>
                     
@@ -137,9 +139,9 @@ Link: <a href="https://github.com/michtra/md2man">github.com/michtra/md2man</a><
                     </div>
                 </article>
                 
-                <article class="project animate-text">
+                <article class="project">
                     <div class="project-header">
-                        <h4>Sharetea POS System</h4>
+                        <h3>Sharetea POS System</h3>
                         <div class="tech-icons">
                             <i class="devicon-react-original colored" title="React"></i>
                             <i class="devicon-materialui-plain" title="Material UI"></i>
@@ -149,13 +151,17 @@ Link: <a href="https://github.com/michtra/md2man">github.com/michtra/md2man</a><
                         </div>
                     </div>
                     
-                    <pre><code>Description: Managing a team to create a POS system for CSCE 331.
+                    <div class="project-content">
+                        <pre><code>Description: Managing a team to create a POS system for CSCE 331.
 Link: <a href="https://github.com/michtra/project3-team21-team-method">github.com/michtra/project3-team21-team-method</a></code></pre>
+                    </div>
                 </article>
-                
-                <p class="animate-text">--- Work Experience ---</p>
 
-                <article class="project animate-text">
+                <br>
+                
+                <h2>~ Experience ~</h2>
+
+                <article class="project">
                     <div class="project-header">
                         <h4>United States Department of Defense - Software Engineering Intern</h4>
                         <div class="tech-icons">
@@ -164,10 +170,12 @@ Link: <a href="https://github.com/michtra/project3-team21-team-method">github.co
                         </div>
                     </div>
                     
-                    <pre><code>Location: Washington, District of Columbia
+                    <div class="project-content">
+                        <pre><code>Location: Washington, District of Columbia
 Duration: June 2024 - August 2024
 Description: Developed an application for the Department of Defense.
 Status: NDA (top secret! 🤫)</code></pre>
+                    </div>
                 </article>
             </div>
         </section>
@@ -177,7 +185,7 @@ Status: NDA (top secret! 🤫)</code></pre>
             <div class="section-content">
                 <div class="cowsay-wrapper">
                     <div class="cowsay-container">
-                        <h3 class="cowsay-output animate-text">
+                        <h3 class="cowsay-output">
      ____________________________________
     / Feel free to reach out to me here: \
     |                                    |
@@ -215,8 +223,8 @@ Status: NDA (top secret! 🤫)</code></pre>
             </div>
             
             <div class="footer-copyright">
-                <p class="animate-text">[michael@arch-linux ~]$ echo "© $(date +%Y) Michael Tran"</p>
-                <p class="animate-text"><em id="dynamic-year">© 2025 Michael Tran</em></p>
+                <p>[michael@arch-linux ~]$ echo "© $(date +%Y) Michael Tran"</p>
+                <p><em id="dynamic-year">© 2025 Michael Tran</em></p>
             </div>
         </div>
     </footer>
