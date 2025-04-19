@@ -127,7 +127,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const yinYangBg = document.getElementById('yin-yang-background');
     const landingSection = document.getElementById('landing');
 
-    let lastScrollY = window.scrollY;
     let currentRotation = 0;
 
     function handleScroll() {

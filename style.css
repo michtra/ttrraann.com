@@ -80,7 +80,6 @@ a {
     background-size: min(30vw, 30vh);
     background-position: center center;
     background-repeat: no-repeat;
-    z-index: -1;
     transition: opacity 0.3s ease-out, transform 0.1s linear;
     opacity: 1;
     transform: scale(1) rotate(0deg);
@@ -521,6 +520,7 @@ footer {
     .project-image {
         flex: 0 0 40%;
         margin-right: 20px;
+        margin-bottom: 15px;
     }
 
     .project-content pre {
@@ -529,11 +529,5 @@ footer {
 
     .cowsay-output {
         font-size: 0.9em;
-    }
-}
-
-@media (max-width: 767px) {
-    .project-image {
-        margin-bottom: 15px;
     }
 }
